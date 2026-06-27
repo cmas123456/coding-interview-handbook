@@ -53,19 +53,15 @@ Echo the DP warning: the failure mode is not "I couldn't code it." The failure m
 
 ## Generic Algorithm
 
-```text
-1. Identify the local choice.
-   Examples: farthest reachable index, earliest finishing interval, smallest cookie that fits.
-2. Decide whether the input must be sorted first.
-   If yes, choose the sort key carefully — the key is the algorithm.
+1. Identify the local choice. Examples: farthest reachable index, earliest finishing interval, smallest cookie that fits.
+2. Decide whether the input must be sorted first. If yes, choose the sort key carefully — the key is the algorithm.
 3. Initialize the smallest state that proves progress.
 4. Scan once:
-     a. Update the state using the current item.
-     b. If the current greedy segment / candidate fails, reset or commit.
-     c. Record the best answer so far.
+     - Update the state using the current item.
+     - If the current greedy segment / candidate fails, reset or commit.
+     - Record the best answer so far.
 5. Return the committed answer.
 6. Sanity-check against a small counter-example before finalizing.
-```
 
 ---
 

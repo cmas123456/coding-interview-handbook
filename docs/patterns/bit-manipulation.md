@@ -54,18 +54,14 @@ For interviews, most bit problems are designed around 32-bit integers, so this i
 
 ## Generic Algorithm
 
-```text
-1. Identify the bit identity.
-   XOR cancellation? lowest set bit? mask enumeration? shift and test?
-2. Normalize JavaScript signedness if needed.
-   Use n >>> 0 before unsigned counting or display.
+1. Identify the bit identity: XOR cancellation, lowest set bit, mask enumeration, or shift-and-test.
+2. Normalize JavaScript signedness if needed. Use `n >>> 0` before unsigned counting or display.
 3. Maintain the smallest bit state:
-     a. XOR accumulator for unique/missing values.
-     b. Count loop that clears one bit at a time.
-     c. Mask from 0 to (1 << n) - 1 for subsets.
+     - XOR accumulator for unique/missing values.
+     - Count loop that clears one bit at a time.
+     - Mask from `0` to `(1 << n) - 1` for subsets.
 4. Parenthesize bit expressions before comparisons.
-5. Return the numeric result, converting with >>> 0 if unsigned output is required.
-```
+5. Return the numeric result, converting with `>>> 0` if unsigned output is required.
 
 ---
 

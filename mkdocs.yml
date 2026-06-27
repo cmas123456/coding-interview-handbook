@@ -18,6 +18,9 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
+extra_javascript:
+  - stylesheets/tasklist.js
+
 plugins:
   - search
 
@@ -27,18 +30,16 @@ markdown_extensions:
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.details
+  - pymdownx.tasklist:
+      custom_checkbox: true
   - pymdownx.tabbed:
       alternate_style: true
 
 nav:
   - Home: index.md
-
-  - Getting Started:
-      - Interview Strategy: interview-strategy.md
-      - Pattern Recognition: pattern-recognition.md
-      - Learning Roadmap: roadmap.md
-      - Big-O Cheat Sheet: complexity-cheatsheet.md
-      - Style Guide: style-guide.md
+  - Pattern Recognition: pattern-recognition.md
+  - Big-O Cheat Sheet: complexity-cheatsheet.md
+  - Blind Drill: practice.md
 
   - Pattern Atlas:
       - "Tier 1 — Core Patterns":

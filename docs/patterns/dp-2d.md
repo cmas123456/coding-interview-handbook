@@ -59,19 +59,16 @@ Most 2D DP bugs are not clever-algorithm bugs. They are **bad state definitions,
 
 ## Generic Algorithm
 
-```text
-1. Define dp[i][j] in one English sentence.
-2. Decide table size.
-   For strings, prefer (n + 1) x (m + 1), where row/col 0 mean empty prefix.
+1. Define `dp[i][j]` in one English sentence.
+2. Decide table size. For strings, prefer `(n + 1) x (m + 1)`, where row/col 0 mean empty prefix.
 3. Initialize base row and base column.
 4. Choose fill order so dependencies are ready:
-     a. Top-left to bottom-right for grid/string prefix DP.
-     b. Items outer, capacity inner for knapsack.
-     c. Increasing interval length for interval DP.
+     - Top-left to bottom-right for grid/string prefix DP.
+     - Items outer, capacity inner for knapsack.
+     - Increasing interval length for interval DP.
 5. For each cell, apply the recurrence from its neighbors.
-6. Return the cell that represents the full problem, usually dp[n][m].
+6. Return the cell that represents the full problem, usually `dp[n][m]`.
 7. Only after correctness, consider two-row or one-row space optimization.
-```
 
 ---
 

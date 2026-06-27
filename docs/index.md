@@ -2,41 +2,36 @@
 
 > Learn coding interviews through **pattern recognition**, not memorization.
 
----
-
-## Welcome
-
-This handbook is designed to teach the reusable patterns that appear in software engineering coding interviews.
-
-Instead of memorizing hundreds of LeetCode problems, you'll learn how to recognize problem types, choose the right algorithm, and explain your reasoning.
+!!! tip "Cramming for an interview? Start here"
+    1. Read **[Pattern Recognition](pattern-recognition.md)** — the decision tree that maps any prompt to a pattern in 30 seconds.
+    2. Skim the **Cheat Card** at the top of each [Tier 1 pattern page](patterns/arrays-hashing.md) — that's the 30-second review of when to use it.
+    3. Drill 2–3 problems per pattern from the "Related Problems" list at the bottom of each page.
+    4. Keep the **[Big-O Cheat Sheet](complexity-cheatsheet.md)** open in a tab.
 
 ---
 
-## Learning Path
+## What this is
 
-1. Interview Strategy
-2. Pattern Recognition
-3. Complexity Cheat Sheet
-4. Pattern Atlas
-5. Practice Problems
+A JavaScript-focused interview handbook organized around **20 reusable patterns**. Instead of memorizing hundreds of LeetCode solutions, you learn to:
 
----
+- **Recognize** which pattern a problem fits in under a minute.
+- **Apply** a template you already know.
+- **Explain** your reasoning out loud — the part interviewers actually score.
 
-## Core Patterns
-
-- Arrays & Hashing
-- Two Pointers
-- Sliding Window
-- Prefix Sum
-- Binary Search
-- Linked Lists
-- Stack
-- Heap
-- Trees
-- Graphs
-- Backtracking
-- Dynamic Programming
+Every pattern page has the same 11 sections, the same Cheat Card up top, and runnable JS code you can paste into a console.
 
 ---
 
-> **Goal:** Learn the patterns once. Apply them everywhere.
+## Pattern Atlas
+
+**Tier 1 — Core Patterns** (start here, roughly in learning order):
+
+[Arrays & Hashing](patterns/arrays-hashing.md) · [Two Pointers](patterns/two-pointers.md) · [Sliding Window](patterns/sliding-window.md) · [Prefix Sum](patterns/prefix-sum.md) · [Binary Search](patterns/binary-search.md) · [Linked Lists](patterns/linked-list.md) · [Stack](patterns/stack.md) · [Heap](patterns/heap.md) · [Intervals](patterns/intervals.md) · [Trees](patterns/tree.md) · [Graphs](patterns/graph.md) · [Backtracking](patterns/backtracking.md) · [Dynamic Programming I](patterns/dp-1d.md)
+
+**Tier 2 — Extended Patterns** (less common, but worth a skim):
+
+[Monotonic Stack](patterns/monotonic-stack.md) · [Queue](patterns/queue.md) · [Trie](patterns/trie.md) · [Union Find](patterns/union-find.md) · [Greedy](patterns/greedy.md) · [Dynamic Programming II](patterns/dp-2d.md) · [Bit Manipulation](patterns/bit-manipulation.md)
+
+---
+
+> **Goal:** learn the patterns once, apply them everywhere.
