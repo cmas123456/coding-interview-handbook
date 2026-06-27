@@ -15,6 +15,9 @@ theme:
     - content.code.copy
     - toc.follow
 
+extra_css:
+  - stylesheets/extra.css
+
 plugins:
   - search
 
@@ -38,23 +41,25 @@ nav:
       - Style Guide: style-guide.md
 
   - Pattern Atlas:
-      - Arrays & Hashing: patterns/arrays-hashing.md
-      - Two Pointers: patterns/two-pointers.md
-      - Sliding Window: patterns/sliding-window.md
-      - Prefix Sum: patterns/prefix-sum.md
-      - Binary Search: patterns/binary-search.md
-      - Linked Lists: patterns/linked-list.md
-      - Stack: patterns/stack.md
-      - Monotonic Stack: patterns/monotonic-stack.md
-      - Queue: patterns/queue.md
-      - Heap: patterns/heap.md
-      - Intervals: patterns/intervals.md
-      - Trees: patterns/tree.md
-      - Trie: patterns/trie.md
-      - Graphs: patterns/graph.md
-      - Union Find: patterns/union-find.md
-      - Backtracking: patterns/backtracking.md
-      - Greedy: patterns/greedy.md
-      - Dynamic Programming I: patterns/dp-1d.md
-      - Dynamic Programming II: patterns/dp-2d.md
-      - Bit Manipulation: patterns/bit-manipulation.md
+      - "Tier 1 — Core Patterns":
+          - Arrays & Hashing: patterns/arrays-hashing.md
+          - Two Pointers: patterns/two-pointers.md
+          - Sliding Window: patterns/sliding-window.md
+          - Prefix Sum: patterns/prefix-sum.md
+          - Binary Search: patterns/binary-search.md
+          - Linked Lists: patterns/linked-list.md
+          - Stack: patterns/stack.md
+          - Heap: patterns/heap.md
+          - Intervals: patterns/intervals.md
+          - Trees: patterns/tree.md
+          - Graphs: patterns/graph.md
+          - Backtracking: patterns/backtracking.md
+          - Dynamic Programming I: patterns/dp-1d.md
+      - "Tier 2 — Extended Patterns":
+          - Monotonic Stack: patterns/monotonic-stack.md
+          - Queue: patterns/queue.md
+          - Trie: patterns/trie.md
+          - Union Find: patterns/union-find.md
+          - Greedy: patterns/greedy.md
+          - Dynamic Programming II: patterns/dp-2d.md
+          - Bit Manipulation: patterns/bit-manipulation.md
