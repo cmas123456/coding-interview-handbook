@@ -1,0 +1,60 @@
+site_name: Coding Interview Handbook
+site_description: Learn coding interviews through pattern recognition, not memorization.
+site_author: Chris Masters
+
+theme:
+  name: material
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - content.code.copy
+    - toc.follow
+
+plugins:
+  - search
+
+markdown_extensions:
+  - admonition
+  - tables
+  - pymdownx.highlight
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.tabbed:
+      alternate_style: true
+
+nav:
+  - Home: index.md
+
+  - Getting Started:
+      - Interview Strategy: interview-strategy.md
+      - Pattern Recognition: pattern-recognition.md
+      - Learning Roadmap: roadmap.md
+      - Big-O Cheat Sheet: complexity-cheatsheet.md
+      - Style Guide: style-guide.md
+
+  - Pattern Atlas:
+      - Arrays & Hashing: patterns/arrays-hashing.md
+      - Two Pointers: patterns/two-pointers.md
+      - Sliding Window: patterns/sliding-window.md
+      - Prefix Sum: patterns/prefix-sum.md
+      - Binary Search: patterns/binary-search.md
+      - Linked Lists: patterns/linked-list.md
+      - Stack: patterns/stack.md
+      - Monotonic Stack: patterns/monotonic-stack.md
+      - Queue: patterns/queue.md
+      - Heap: patterns/heap.md
+      - Intervals: patterns/intervals.md
+      - Trees: patterns/tree.md
+      - Trie: patterns/trie.md
+      - Graphs: patterns/graph.md
+      - Union Find: patterns/union-find.md
+      - Backtracking: patterns/backtracking.md
+      - Greedy: patterns/greedy.md
+      - Dynamic Programming I: patterns/dp-1d.md
+      - Dynamic Programming II: patterns/dp-2d.md
+      - Bit Manipulation: patterns/bit-manipulation.md
