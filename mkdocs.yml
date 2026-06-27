@@ -41,6 +41,9 @@ nav:
   - Pattern Recognition: pattern-recognition.md
   - Big-O Cheat Sheet: complexity-cheatsheet.md
   - Blind Drill: practice.md
+  - Blind 75:
+      - By Pattern: blind75-by-pattern.md
+      - Blind Drill: blind75-drill.md
 
   - Pattern Atlas:
       - "Tier 1 — Core Patterns":
