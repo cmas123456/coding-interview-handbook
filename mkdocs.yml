@@ -1,6 +1,7 @@
 site_name: Coding Interview Handbook
 site_description: Learn coding interviews through pattern recognition, not memorization.
 site_author: Chris Masters
+site_url: https://cmas123456.github.io/coding-interview-handbook/
 
 theme:
   name: material
