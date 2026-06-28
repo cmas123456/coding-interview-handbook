@@ -1450,15 +1450,15 @@
 
 <h1 id="blind-75-by-pattern">Blind 75 — By Pattern</h1>
 <blockquote>
-<p>The canonical FAANG-prep list (75 problems), grouped by the pattern each one primarily teaches. Use this view to drill all problems of a single pattern in one sitting.</p>
+<p>The canonical FAANG-prep list (75 problems), grouped by the pattern each one primarily teaches. Each entry has a <strong>🔑 trigger</strong> — the phrase or signal in the prompt that should fire the pattern in your head.</p>
 </blockquote>
 <div class="admonition tip">
 <p class="admonition-title">How to use this view</p>
 <ul>
-<li>Pick a pattern row. Solve top-to-bottom within difficulty.</li>
-<li>The pattern label is the <strong>primary</strong> pattern — many problems have secondary patterns too.</li>
-<li>🔒 = LeetCode Premium (you can usually find the prompt on a free mirror).</li>
-<li>Want to test recognition instead? Use <strong><a href="../blind75-drill/">Blind 75 — Blind Drill</a></strong>.</li>
+<li>Read the trigger <strong>before</strong> opening the problem — it's your prediction.</li>
+<li>Open the problem, confirm the trigger matches what you see, then solve.</li>
+<li>🔒 = LeetCode Premium.</li>
+<li>Want to test recognition cold (no pattern, no trigger)? Use <strong><a href="../blind75-drill/">Blind 75 — Blind Drill</a></strong>.</li>
 </ul>
 </div>
 <hr />
@@ -1466,129 +1466,354 @@
 <hr />
 <h2 id="arrays-hashing-11"><a href="../patterns/arrays-hashing/">Arrays &amp; Hashing</a> (11)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/two-sum/">Two Sum</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/contains-duplicate/">Contains Duplicate</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/valid-anagram/">Valid Anagram</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/group-anagrams/">Group Anagrams</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/top-k-frequent-elements/">Top K Frequent Elements</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/product-of-array-except-self/">Product of Array Except Self</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/encode-and-decode-strings/">Encode and Decode Strings</a> 🔒</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-consecutive-sequence/">Longest Consecutive Sequence</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/rotate-image/">Rotate Image</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/spiral-matrix/">Spiral Matrix</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/set-matrix-zeroes/">Set Matrix Zeroes</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/two-sum/">Two Sum</a><ul>
+<li>🔑 "return indices… sum to target" → hash map of complement.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/contains-duplicate/">Contains Duplicate</a><ul>
+<li>🔑 "any duplicates" / unsorted → Set, return on first hit.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/valid-anagram/">Valid Anagram</a><ul>
+<li>🔑 "anagram of" → char-count map (or sort both).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/group-anagrams/">Group Anagrams</a><ul>
+<li>🔑 "group strings that are anagrams" → key by sorted chars or char-count tuple.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/top-k-frequent-elements/">Top K Frequent Elements</a><ul>
+<li>🔑 "k most frequent" → count + bucket sort (O(n)) or heap (O(n log k)).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/product-of-array-except-self/">Product of Array Except Self</a><ul>
+<li>🔑 "product of all elements except i" / "no division" → prefix * suffix passes.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/encode-and-decode-strings/">Encode and Decode Strings</a> 🔒<ul>
+<li>🔑 "serialize list of strings" → length-prefix each (e.g. "5#hello").</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-consecutive-sequence/">Longest Consecutive Sequence</a><ul>
+<li>🔑 "longest consecutive sequence" / "O(n)" → Set; only start walks from sequence starts (n-1 not in set).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/rotate-image/">Rotate Image</a><ul>
+<li>🔑 "rotate 90° in-place" → transpose then reverse each row.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/spiral-matrix/">Spiral Matrix</a><ul>
+<li>🔑 "spiral order" → 4 shrinking boundaries (top/bottom/left/right).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/set-matrix-zeroes/">Set Matrix Zeroes</a><ul>
+<li>🔑 "in-place, zero out row/col" → use first row/col as marker flags.</li>
+</ul>
+</li>
 </ul>
 <h2 id="two-pointers-3"><a href="../patterns/two-pointers/">Two Pointers</a> (3)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/valid-palindrome/">Valid Palindrome</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/3sum/">3Sum</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/container-with-most-water/">Container With Most Water</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/valid-palindrome/">Valid Palindrome</a><ul>
+<li>🔑 "palindrome ignoring non-alphanumeric" → l/r pointers, skip non-alnum, compare lowercase.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/3sum/">3Sum</a><ul>
+<li>🔑 "triplets that sum to 0", "no duplicates" → sort + fix i, two-pointer for rest; skip dupes.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/container-with-most-water/">Container With Most Water</a><ul>
+<li>🔑 "max water" / two heights → l/r pointers, move the shorter wall.</li>
+</ul>
+</li>
 </ul>
 <h2 id="sliding-window-4"><a href="../patterns/sliding-window/">Sliding Window</a> (4)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">Best Time to Buy and Sell Stock</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Longest Substring Without Repeating Characters</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-repeating-character-replacement/">Longest Repeating Character Replacement</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/minimum-window-substring/">Minimum Window Substring</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">Best Time to Buy and Sell Stock</a><ul>
+<li>🔑 "max profit, buy before sell" → track min-so-far + max diff (single pass).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Longest Substring Without Repeating Characters</a><ul>
+<li>🔑 "longest substring without repeating" → window + Set/lastIndex map, shrink on dup.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-repeating-character-replacement/">Longest Repeating Character Replacement</a><ul>
+<li>🔑 "replace at most k chars, longest same-letter" → window; shrink while (len − maxFreq) &gt; k.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/minimum-window-substring/">Minimum Window Substring</a><ul>
+<li>🔑 "smallest window containing all chars of t" → need/have counts, shrink when have == need.</li>
+</ul>
+</li>
 </ul>
 <h2 id="binary-search-2"><a href="../patterns/binary-search/">Binary Search</a> (2)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/">Find Minimum in Rotated Sorted Array</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">Search in Rotated Sorted Array</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/">Find Minimum in Rotated Sorted Array</a><ul>
+<li>🔑 "rotated sorted, find min, O(log n)" → binary search; compare mid to right.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">Search in Rotated Sorted Array</a><ul>
+<li>🔑 "rotated sorted, find target, O(log n)" → binary search; figure out which half is sorted.</li>
+</ul>
+</li>
 </ul>
 <h2 id="linked-lists-5"><a href="../patterns/linked-list/">Linked Lists</a> (5)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/reverse-linked-list/">Reverse Linked List</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/merge-two-sorted-lists/">Merge Two Sorted Lists</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/linked-list-cycle/">Linked List Cycle</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/reorder-list/">Reorder List</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/">Remove Nth Node From End of List</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/reverse-linked-list/">Reverse Linked List</a><ul>
+<li>🔑 "reverse a linked list" → prev/curr/next iterative swap.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/merge-two-sorted-lists/">Merge Two Sorted Lists</a><ul>
+<li>🔑 "merge two sorted lists" → dummy head + tail pointer, splice smaller.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/linked-list-cycle/">Linked List Cycle</a><ul>
+<li>🔑 "has a cycle" → Floyd's slow/fast pointers, meet means cycle.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/reorder-list/">Reorder List</a><ul>
+<li>🔑 "L0→Ln→L1→Ln-1…" → find mid (slow/fast) + reverse second half + merge.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/">Remove Nth Node From End of List</a><ul>
+<li>🔑 "nth from end, one pass" → two pointers, gap of n.</li>
+</ul>
+</li>
 </ul>
 <h2 id="stack-1"><a href="../patterns/stack/">Stack</a> (1)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/valid-parentheses/">Valid Parentheses</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/valid-parentheses/">Valid Parentheses</a><ul>
+<li>🔑 "valid parentheses ()[]{}" → stack; push opens, pop+match on close.</li>
+</ul>
+</li>
 </ul>
 <h2 id="heap-2"><a href="../patterns/heap/">Heap</a> (2)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/merge-k-sorted-lists/">Merge k Sorted Lists</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/find-median-from-data-stream/">Find Median from Data Stream</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/merge-k-sorted-lists/">Merge k Sorted Lists</a><ul>
+<li>🔑 "merge k sorted lists" → min-heap of heads (or divide-and-conquer pairwise merge).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/find-median-from-data-stream/">Find Median from Data Stream</a><ul>
+<li>🔑 "median of a stream" → two heaps (max-heap low half, min-heap high half).</li>
+</ul>
+</li>
 </ul>
 <h2 id="intervals-5"><a href="../patterns/intervals/">Intervals</a> (5)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/meeting-rooms/">Meeting Rooms</a> 🔒</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/insert-interval/">Insert Interval</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/merge-intervals/">Merge Intervals</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/non-overlapping-intervals/">Non-overlapping Intervals</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/meeting-rooms-ii/">Meeting Rooms II</a> 🔒</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/meeting-rooms/">Meeting Rooms</a> 🔒<ul>
+<li>🔑 "can attend all meetings" → sort by start; check any overlap.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/insert-interval/">Insert Interval</a><ul>
+<li>🔑 "insert and merge intervals, sorted" → 3 passes: before, overlapping (merge), after.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/merge-intervals/">Merge Intervals</a><ul>
+<li>🔑 "merge overlapping intervals" → sort by start; merge if curr.start ≤ last.end.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/non-overlapping-intervals/">Non-overlapping Intervals</a><ul>
+<li>🔑 "min removals to make non-overlapping" → sort by end; greedy keep earliest end.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/meeting-rooms-ii/">Meeting Rooms II</a> 🔒<ul>
+<li>🔑 "min rooms needed" → sort starts and ends separately; sweep, or min-heap of end times.</li>
+</ul>
+</li>
 </ul>
 <h2 id="trees-11"><a href="../patterns/tree/">Trees</a> (11)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/invert-binary-tree/">Invert Binary Tree</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">Maximum Depth of Binary Tree</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/same-tree/">Same Tree</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/subtree-of-another-tree/">Subtree of Another Tree</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">Lowest Common Ancestor of a Binary Search Tree</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/">Binary Tree Level Order Traversal</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/validate-binary-search-tree/">Validate Binary Search Tree</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/">Kth Smallest Element in a BST</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">Construct Binary Tree from Preorder and Inorder Traversal</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/">Binary Tree Maximum Path Sum</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree/">Serialize and Deserialize Binary Tree</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/invert-binary-tree/">Invert Binary Tree</a><ul>
+<li>🔑 "invert / mirror tree" → recurse, swap left/right.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">Maximum Depth of Binary Tree</a><ul>
+<li>🔑 "max depth" → 1 + max(depth(left), depth(right)).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/same-tree/">Same Tree</a><ul>
+<li>🔑 "same structure and values" → recurse both, compare nodes.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/subtree-of-another-tree/">Subtree of Another Tree</a><ul>
+<li>🔑 "is t a subtree of s" → recurse s; at each node run sameTree(node, t).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">Lowest Common Ancestor of a Binary Search Tree</a><ul>
+<li>🔑 "LCA in BST" → first node where p and q split (one ≤ node ≤ other).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/">Binary Tree Level Order Traversal</a><ul>
+<li>🔑 "level by level" → BFS with queue; capture size per level.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/validate-binary-search-tree/">Validate Binary Search Tree</a><ul>
+<li>🔑 "valid BST" → recurse with (min, max) bounds, not just parent compare.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/">Kth Smallest Element in a BST</a><ul>
+<li>🔑 "kth smallest in BST" → in-order traversal, stop at k.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">Construct Binary Tree from Preorder and Inorder Traversal</a><ul>
+<li>🔑 "build tree from preorder + inorder" → preorder gives root, inorder splits left/right; index map for O(n).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/">Binary Tree Maximum Path Sum</a><ul>
+<li>🔑 "max path sum, any node to any" → post-order; return one-arm, update global with both arms.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree/">Serialize and Deserialize Binary Tree</a><ul>
+<li>🔑 "serialize/deserialize tree" → preorder with null markers; deserialize with queue/index.</li>
+</ul>
+</li>
 </ul>
 <h2 id="graphs-5"><a href="../patterns/graph/">Graphs</a> (5)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/number-of-islands/">Number of Islands</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/clone-graph/">Clone Graph</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/pacific-atlantic-water-flow/">Pacific Atlantic Water Flow</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/course-schedule/">Course Schedule</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/alien-dictionary/">Alien Dictionary</a> 🔒</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/number-of-islands/">Number of Islands</a><ul>
+<li>🔑 "count islands in grid" → DFS/BFS flood-fill, mark visited.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/clone-graph/">Clone Graph</a><ul>
+<li>🔑 "deep copy graph" → DFS/BFS + visited map (old→new) to avoid cycles.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/pacific-atlantic-water-flow/">Pacific Atlantic Water Flow</a><ul>
+<li>🔑 "cells reaching both oceans" → BFS/DFS inward from each border; intersect two visited sets.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/course-schedule/">Course Schedule</a><ul>
+<li>🔑 "can finish all courses" → cycle detection in directed graph (DFS colors or Kahn's indegree).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/alien-dictionary/">Alien Dictionary</a> 🔒<ul>
+<li>🔑 "order of letters from sorted words" → build edges from adjacent word pairs; topological sort (Kahn's).</li>
+</ul>
+</li>
 </ul>
 <h2 id="backtracking-2"><a href="../patterns/backtracking/">Backtracking</a> (2)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/combination-sum/">Combination Sum</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/word-search/">Word Search</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/combination-sum/">Combination Sum</a><ul>
+<li>🔑 "all combinations summing to target, reuse allowed" → backtrack; pass start index to avoid permutations.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/word-search/">Word Search</a><ul>
+<li>🔑 "word in grid, adjacent cells" → DFS from each cell; mark visited then unmark on return.</li>
+</ul>
+</li>
 </ul>
 <h2 id="dynamic-programming-i-11"><a href="../patterns/dp-1d/">Dynamic Programming I</a> (11)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/climbing-stairs/">Climbing Stairs</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/house-robber/">House Robber</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/house-robber-ii/">House Robber II</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-palindromic-substring/">Longest Palindromic Substring</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/palindromic-substrings/">Palindromic Substrings</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/decode-ways/">Decode Ways</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/coin-change/">Coin Change</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/maximum-product-subarray/">Maximum Product Subarray</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/word-break/">Word Break</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-increasing-subsequence/">Longest Increasing Subsequence</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/maximum-subarray/">Maximum Subarray</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/climbing-stairs/">Climbing Stairs</a><ul>
+<li>🔑 "ways to climb n stairs (1 or 2)" → Fibonacci: dp[i] = dp[i-1] + dp[i-2].</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/house-robber/">House Robber</a><ul>
+<li>🔑 "max sum, no two adjacent" → dp[i] = max(dp[i-1], dp[i-2] + nums[i]).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/house-robber-ii/">House Robber II</a><ul>
+<li>🔑 "houses in a circle" → run house-robber twice: [0..n-2] and [1..n-1], take max.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-palindromic-substring/">Longest Palindromic Substring</a><ul>
+<li>🔑 "longest palindromic substring" → expand around each center (odd + even).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/palindromic-substrings/">Palindromic Substrings</a><ul>
+<li>🔑 "count palindromic substrings" → expand around each center, count expansions.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/decode-ways/">Decode Ways</a><ul>
+<li>🔑 "decode digits to letters A-Z" → dp; check 1-digit (1-9) and 2-digit (10-26) at each step.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/coin-change/">Coin Change</a><ul>
+<li>🔑 "fewest coins to make amount" → unbounded knapsack; dp[a] = min(dp[a-c]+1).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/maximum-product-subarray/">Maximum Product Subarray</a><ul>
+<li>🔑 "max product subarray" → track curMax AND curMin (negatives flip).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/word-break/">Word Break</a><ul>
+<li>🔑 "can string be segmented into dict words" → dp[i] = any j where dp[j] &amp;&amp; s[j..i] in dict.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-increasing-subsequence/">Longest Increasing Subsequence</a><ul>
+<li>🔑 "longest increasing subseq" → O(n²) dp or O(n log n) with patience/binary search.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/maximum-subarray/">Maximum Subarray</a><ul>
+<li>🔑 "max sum subarray" → Kadane: curSum = max(num, curSum + num).</li>
+</ul>
+</li>
 </ul>
 <h2 id="trie-3"><a href="../patterns/trie/">Trie</a> (3)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/implement-trie-prefix-tree/">Implement Trie (Prefix Tree)</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/design-add-and-search-words-data-structure/">Design Add and Search Words Data Structure</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/word-search-ii/">Word Search II</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/implement-trie-prefix-tree/">Implement Trie (Prefix Tree)</a><ul>
+<li>🔑 "insert/search/startsWith" → classic trie: children map + isEnd flag.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/design-add-and-search-words-data-structure/">Design Add and Search Words Data Structure</a><ul>
+<li>🔑 "search with . wildcard" → trie + DFS; on . recurse all children.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/word-search-ii/">Word Search II</a><ul>
+<li>🔑 "find all words in board" → build trie of words; DFS from each cell, prune via trie.</li>
+</ul>
+</li>
 </ul>
 <h2 id="union-find-2"><a href="../patterns/union-find/">Union Find</a> (2)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/">Number of Connected Components in an Undirected Graph</a> 🔒</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/graph-valid-tree/">Graph Valid Tree</a> 🔒</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/">Number of Connected Components in an Undirected Graph</a> 🔒<ul>
+<li>🔑 "count connected components" → union-find on edges; count roots. (or DFS).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/graph-valid-tree/">Graph Valid Tree</a> 🔒<ul>
+<li>🔑 "valid tree: connected + no cycle" → union-find; reject union of same root; need exactly n-1 edges.</li>
+</ul>
+</li>
 </ul>
 <h2 id="greedy-1"><a href="../patterns/greedy/">Greedy</a> (1)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/jump-game/">Jump Game</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/jump-game/">Jump Game</a><ul>
+<li>🔑 "can reach last index" → greedy: track furthest reachable; fail if i &gt; reach.</li>
+</ul>
+</li>
 </ul>
 <h2 id="dynamic-programming-ii-2"><a href="../patterns/dp-2d/">Dynamic Programming II</a> (2)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/unique-paths/">Unique Paths</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-common-subsequence/">Longest Common Subsequence</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/unique-paths/">Unique Paths</a><ul>
+<li>🔑 "paths in m×n grid, right/down only" → dp[i][j] = dp[i-1][j] + dp[i][j-1] (or C(m+n-2, m-1)).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-common-subsequence/">Longest Common Subsequence</a><ul>
+<li>🔑 "LCS of two strings" → 2D dp; match → dp[i-1][j-1]+1, else max(up,left).</li>
+</ul>
+</li>
 </ul>
 <h2 id="bit-manipulation-5"><a href="../patterns/bit-manipulation/">Bit Manipulation</a> (5)</h2>
 <ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/number-of-1-bits/">Number of 1 Bits</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/counting-bits/">Counting Bits</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/reverse-bits/">Reverse Bits</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/missing-number/">Missing Number</a></li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/sum-of-two-integers/">Sum of Two Integers</a></li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/number-of-1-bits/">Number of 1 Bits</a><ul>
+<li>🔑 "count set bits" → loop n &amp;= n-1 (clears lowest set bit each time).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/counting-bits/">Counting Bits</a><ul>
+<li>🔑 "set bits for 0..n" → dp: bits[i] = bits[i &gt;&gt; 1] + (i &amp; 1).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/reverse-bits/">Reverse Bits</a><ul>
+<li>🔑 "reverse 32 bits" → shift result left, OR low bit of n, n &gt;&gt;= 1, 32 times.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/missing-number/">Missing Number</a><ul>
+<li>🔑 "missing in [0..n]" → XOR all indices and values; or sum diff.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/sum-of-two-integers/">Sum of Two Integers</a><ul>
+<li>🔑 "add without + or −" → XOR for sum-no-carry, AND&lt;&lt;1 for carry; loop until carry == 0.</li>
+</ul>
+</li>
 </ul>
 
 
