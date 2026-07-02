@@ -43,6 +43,7 @@ markdown_extensions:
 
 nav:
   - Home: index.md
+  - "🎯 Discussion Round Prep": discussion-prep.md
   - Pattern Recognition: pattern-recognition.md
   - Big-O Cheat Sheet: complexity-cheatsheet.md
   - Blind Drill: practice.md
