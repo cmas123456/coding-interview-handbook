@@ -68,3 +68,14 @@ nav:
           - Greedy: patterns/greedy.md
           - Dynamic Programming II: patterns/dp-2d.md
           - Bit Manipulation: patterns/bit-manipulation.md
+
+  - System Design:
+      - Framework: system-design/framework.md
+      - Building Blocks: system-design/building-blocks.md
+      - Estimation Numbers: system-design/estimation-numbers.md
+      - Common Designs: system-design/patterns.md
+
+  - Senior Discussion:
+      - Framework: senior-discussion/framework.md
+      - Prompts: senior-discussion/prompts.md
+      - Your Stories: senior-discussion/your-stories.md
