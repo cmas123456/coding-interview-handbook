@@ -1,0 +1,1831 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learn coding interviews through pattern recognition, not memorization.">
+      
+      
+        <meta name="author" content="Chris Masters">
+      
+      
+        <link rel="canonical" href="https://cmas123456.github.io/coding-interview-handbook/system-design/framework/">
+      
+      
+        <link rel="prev" href="../../patterns/bit-manipulation/">
+      
+      
+        <link rel="next" href="../building-blocks/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Framework - Coding Interview Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#system-design-framework" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Coding Interview Handbook" class="md-header__button md-logo" aria-label="Coding Interview Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Coding Interview Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Framework
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pattern-recognition/" class="md-tabs__link">
+        
+  
+    
+  
+  Pattern Recognition
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../complexity-cheatsheet/" class="md-tabs__link">
+        
+  
+    
+  
+  Big-O Cheat Sheet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../practice/" class="md-tabs__link">
+        
+  
+    
+  
+  Blind Drill
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blind75-by-pattern/" class="md-tabs__link">
+          
+  
+  Blind 75
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../patterns/arrays-hashing/" class="md-tabs__link">
+          
+  
+  Pattern Atlas
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  System Design
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../senior-discussion/framework/" class="md-tabs__link">
+          
+  
+  Senior Discussion
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../glossary/" class="md-tabs__link">
+        
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Coding Interview Handbook" class="md-nav__button md-logo" aria-label="Coding Interview Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Coding Interview Handbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pattern-recognition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pattern Recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../complexity-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Big-O Cheat Sheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blind Drill
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blind 75
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Blind 75
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blind75-by-pattern/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    By Pattern
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blind75-drill/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blind Drill
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pattern Atlas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Pattern Atlas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tier 1 — Core Patterns
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Tier 1 — Core Patterns
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/arrays-hashing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arrays & Hashing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/two-pointers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Two Pointers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/sliding-window/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sliding Window
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/prefix-sum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prefix Sum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/binary-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binary Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/linked-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linked Lists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/heap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Heap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/intervals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intervals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graphs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/backtracking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backtracking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/dp-1d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dynamic Programming I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tier 2 — Extended Patterns
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tier 2 — Extended Patterns
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/monotonic-stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monotonic Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Queue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/trie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/union-find/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Union Find
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/greedy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Greedy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/dp-2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dynamic Programming II
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/bit-manipulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bit Manipulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    System Design
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            System Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Framework
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Framework
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-7-steps-say-them-out-loud" class="md-nav__link">
+    <span class="md-ellipsis">
+      The 7 steps (say them out loud)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-requirements-the-highest-leverage-5-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1 — Requirements (the highest-leverage 5 min)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-estimation-show-the-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2 — Estimation (show the math)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-api-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3 — API design
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4 — Data model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-high-level-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5 — High-level design
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-deep-dives-where-you-win-or-lose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6 — Deep dives (where you win or lose)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-trade-offs-wrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 7 — Trade-offs + wrap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-patterns-dont-do-these" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anti-patterns (don't do these)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-blocks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building Blocks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estimation-numbers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estimation Numbers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common Designs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Senior Discussion
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Senior Discussion
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../senior-discussion/framework/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../senior-discussion/prompts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../senior-discussion/your-stories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Your Stories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#the-7-steps-say-them-out-loud" class="md-nav__link">
+    <span class="md-ellipsis">
+      The 7 steps (say them out loud)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-1-requirements-the-highest-leverage-5-min" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 1 — Requirements (the highest-leverage 5 min)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-2-estimation-show-the-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 2 — Estimation (show the math)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-3-api-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 3 — API design
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-4-data-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 4 — Data model
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-5-high-level-design" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 5 — High-level design
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-6-deep-dives-where-you-win-or-lose" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 6 — Deep dives (where you win or lose)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#step-7-trade-offs-wrap" class="md-nav__link">
+    <span class="md-ellipsis">
+      Step 7 — Trade-offs + wrap
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#anti-patterns-dont-do-these" class="md-nav__link">
+    <span class="md-ellipsis">
+      Anti-patterns (don't do these)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="system-design-framework">System Design Framework</h1>
+<blockquote>
+<p>A repeatable 45-min script. Run it in order; don't skip steps. Signal you know the process.</p>
+</blockquote>
+<hr />
+<h2 id="the-7-steps-say-them-out-loud">The 7 steps (say them out loud)</h2>
+<table>
+<thead>
+<tr>
+<th>#</th>
+<th>Step</th>
+<th>Time</th>
+<th>What you actually do</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td><strong>Requirements</strong></td>
+<td>5 min</td>
+<td>Functional + non-functional. Ask, don't assume.</td>
+</tr>
+<tr>
+<td>2</td>
+<td><strong>Estimation</strong></td>
+<td>3 min</td>
+<td>QPS, storage, bandwidth. Back-of-envelope.</td>
+</tr>
+<tr>
+<td>3</td>
+<td><strong>API design</strong></td>
+<td>3 min</td>
+<td>Endpoints + request/response shapes.</td>
+</tr>
+<tr>
+<td>4</td>
+<td><strong>Data model</strong></td>
+<td>4 min</td>
+<td>Entities, relationships, SQL vs NoSQL choice.</td>
+</tr>
+<tr>
+<td>5</td>
+<td><strong>High-level design</strong></td>
+<td>8 min</td>
+<td>Boxes + arrows. Client → LB → service → DB, plus cache/queue/CDN.</td>
+</tr>
+<tr>
+<td>6</td>
+<td><strong>Deep dives</strong></td>
+<td>15 min</td>
+<td>Pick 2-3 areas the interviewer cares about.</td>
+</tr>
+<tr>
+<td>7</td>
+<td><strong>Trade-offs + wrap</strong></td>
+<td>5 min</td>
+<td>Bottlenecks, what you'd change with more time.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="step-1-requirements-the-highest-leverage-5-min">Step 1 — Requirements (the highest-leverage 5 min)</h2>
+<p><strong>Functional</strong> — what does it do?
+- "Users can post, follow, see a feed" — enumerate concretely.
+- Get 3-5 core features. Don't accept "everything".
+- Explicitly <strong>cut scope</strong>: "I'll design posting + feed; auth and payments out of scope — sound good?"</p>
+<p><strong>Non-functional</strong> — how well?
+- Scale: DAU, QPS, read:write ratio
+- Latency: p50/p99 target
+- Consistency: strong or eventual?
+- Availability: 99.9%? 99.99%?
+- Durability: can we lose data?</p>
+<div class="admonition tip">
+<p class="admonition-title">Ask these 4 questions every time</p>
+<ol>
+<li>"How many users? Reads vs writes?"</li>
+<li>"What's the latency target?"</li>
+<li>"Consistency: is eventual OK, or must reads see the latest write?"</li>
+<li>"Any specific SLAs on availability?"</li>
+</ol>
+</div>
+<hr />
+<h2 id="step-2-estimation-show-the-math">Step 2 — Estimation (show the math)</h2>
+<p>Do it out loud. Interviewers grade on the <em>process</em>, not the number.</p>
+<p><strong>Template</strong>:
+<div class="highlight"><pre><span></span><code>DAU: 100M
+Actions/user/day: 10 → 1B/day
+QPS avg: 1B / 86,400 ≈ 12K QPS
+Peak (3x): ~36K QPS
+Read:write = 100:1 → writes 360 QPS, reads 36K QPS
+Storage/action: 1KB → 1TB/day → 365TB/yr
+</code></pre></div></p>
+<p>Numbers to memorize: see <a href="../estimation-numbers/">Estimation Numbers</a>.</p>
+<hr />
+<h2 id="step-3-api-design">Step 3 — API design</h2>
+<p>Keep it minimal. REST is fine unless they push you.</p>
+<div class="highlight"><pre><span></span><code><span class="err">POST /posts             { text, mediaUrl? }        → { postId }</span>
+<span class="err">GET  /users/{id}/feed?cursor=X&amp;limit=20            → { posts[], nextCursor }</span>
+<span class="err">POST /users/{id}/follow                            → 204</span>
+</code></pre></div>
+<ul>
+<li><strong>Cursor pagination</strong>, not offset (scales, stable).</li>
+<li>Idempotency keys on writes if retries matter.</li>
+<li>Auth: assume bearer token in header; don't rat-hole on it.</li>
+</ul>
+<hr />
+<h2 id="step-4-data-model">Step 4 — Data model</h2>
+<p>Two questions to answer:
+1. <strong>SQL or NoSQL?</strong> — SQL if you need joins, transactions, or strong consistency. NoSQL if you need horizontal write scale + flexible schema.
+2. <strong>What's the primary access pattern?</strong> — Design the schema/keys around it.</p>
+<p>Sketch 3-5 tables. For NoSQL, sketch the partition key + sort key.</p>
+<hr />
+<h2 id="step-5-high-level-design">Step 5 — High-level design</h2>
+<p>Draw this backbone every time, then adapt:</p>
+<div class="highlight"><pre><span></span><code>Client → CDN → LB → API Gateway → [Service] → Cache → DB
+                                       ↓
+                                    Queue → Worker → DB/Search
+</code></pre></div>
+<p>Announce the pieces as you draw. Then say: <strong>"Now let me trace a write and a read through this."</strong></p>
+<hr />
+<h2 id="step-6-deep-dives-where-you-win-or-lose">Step 6 — Deep dives (where you win or lose)</h2>
+<p>Interviewer will nudge you toward 2-3 of:
+- <strong>Scaling the DB</strong> — sharding key choice, replication, read replicas
+- <strong>Cache strategy</strong> — cache-aside vs write-through, invalidation, TTL
+- <strong>Feed generation</strong> — fan-out on write vs read (see <a href="../patterns/">Patterns</a>)
+- <strong>Rate limiting</strong> — token bucket vs sliding window
+- <strong>Search</strong> — inverted index, Elasticsearch
+- <strong>Consistency</strong> — quorum reads, leader election, CRDTs
+- <strong>Hot keys / celebrities</strong> — replication, per-key fanout</p>
+<p>Pick the deep dive <strong>they</strong> care about. If unclear, ask: "Which area would you like me to go deeper on?"</p>
+<hr />
+<h2 id="step-7-trade-offs-wrap">Step 7 — Trade-offs + wrap</h2>
+<p>End strong with 3 bullets:
+1. <strong>Current bottleneck</strong>: "At 10x scale, the feed DB writes become the choke — I'd shard by userId."
+2. <strong>Consistency trade-off</strong>: "I chose eventual consistency on feed reads for latency; the cost is stale reads for up to N seconds."
+3. <strong>What I'd do with more time</strong>: "Add a search service, harden the abuse pipeline, run a load test."</p>
+<hr />
+<h2 id="anti-patterns-dont-do-these">Anti-patterns (don't do these)</h2>
+<ul>
+<li>❌ Jumping to boxes before clarifying requirements</li>
+<li>❌ Adding Kafka/Redis/microservices without justifying them</li>
+<li>❌ Ignoring the interviewer's hints ("what if X was 100x?")</li>
+<li>❌ Silent thinking — narrate constantly</li>
+<li>❌ Perfectionism on one area — cover the whole board first, deep-dive second</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../stylesheets/tasklist.js"></script>
+      
+    
+  </body>
+</html>

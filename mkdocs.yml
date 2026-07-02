@@ -28,9 +28,14 @@ plugins:
 markdown_extensions:
   - admonition
   - tables
+  - abbr
+  - attr_list
   - pymdownx.highlight
   - pymdownx.superfences
   - pymdownx.details
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tabbed:
@@ -79,3 +84,5 @@ nav:
       - Framework: senior-discussion/framework.md
       - Prompts: senior-discussion/prompts.md
       - Your Stories: senior-discussion/your-stories.md
+
+  - Glossary: glossary.md

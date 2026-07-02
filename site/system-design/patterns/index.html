@@ -1,0 +1,1779 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learn coding interviews through pattern recognition, not memorization.">
+      
+      
+        <meta name="author" content="Chris Masters">
+      
+      
+        <link rel="canonical" href="https://cmas123456.github.io/coding-interview-handbook/system-design/patterns/">
+      
+      
+        <link rel="prev" href="../estimation-numbers/">
+      
+      
+        <link rel="next" href="../../senior-discussion/framework/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>Common Designs - Coding Interview Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#common-system-designs" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Coding Interview Handbook" class="md-header__button md-logo" aria-label="Coding Interview Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Coding Interview Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Common Designs
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../pattern-recognition/" class="md-tabs__link">
+        
+  
+    
+  
+  Pattern Recognition
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../complexity-cheatsheet/" class="md-tabs__link">
+        
+  
+    
+  
+  Big-O Cheat Sheet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../practice/" class="md-tabs__link">
+        
+  
+    
+  
+  Blind Drill
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../blind75-by-pattern/" class="md-tabs__link">
+          
+  
+  Blind 75
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../patterns/arrays-hashing/" class="md-tabs__link">
+          
+  
+  Pattern Atlas
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../framework/" class="md-tabs__link">
+          
+  
+  System Design
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../senior-discussion/framework/" class="md-tabs__link">
+          
+  
+  Senior Discussion
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../glossary/" class="md-tabs__link">
+        
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Coding Interview Handbook" class="md-nav__button md-logo" aria-label="Coding Interview Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Coding Interview Handbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pattern-recognition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pattern Recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../complexity-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Big-O Cheat Sheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../practice/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blind Drill
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Blind 75
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Blind 75
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blind75-by-pattern/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    By Pattern
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../blind75-drill/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blind Drill
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pattern Atlas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Pattern Atlas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tier 1 — Core Patterns
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Tier 1 — Core Patterns
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/arrays-hashing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arrays & Hashing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/two-pointers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Two Pointers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/sliding-window/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sliding Window
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/prefix-sum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prefix Sum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/binary-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binary Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/linked-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linked Lists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/heap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Heap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/intervals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intervals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graphs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/backtracking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backtracking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/dp-1d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dynamic Programming I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tier 2 — Extended Patterns
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tier 2 — Extended Patterns
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/monotonic-stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monotonic Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Queue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/trie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/union-find/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Union Find
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/greedy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Greedy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/dp-2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dynamic Programming II
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../patterns/bit-manipulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bit Manipulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    System Design
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            System Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../framework/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../building-blocks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building Blocks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../estimation-numbers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estimation Numbers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Common Designs
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Common Designs
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#url-shortener-bitly" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL Shortener (bit.ly)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rate-limiter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rate Limiter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#news-feed-twitter-instagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      News Feed (Twitter / Instagram)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chat-whatsapp-slack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chat (WhatsApp / Slack)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notification-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notification Service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-k-trending" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top-K / Trending
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geo-search-uber-yelp-nearby" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geo-search (Uber / Yelp "nearby")
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Senior Discussion
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Senior Discussion
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../senior-discussion/framework/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../senior-discussion/prompts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../senior-discussion/your-stories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Your Stories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#url-shortener-bitly" class="md-nav__link">
+    <span class="md-ellipsis">
+      URL Shortener (bit.ly)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rate-limiter" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rate Limiter
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#news-feed-twitter-instagram" class="md-nav__link">
+    <span class="md-ellipsis">
+      News Feed (Twitter / Instagram)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chat-whatsapp-slack" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chat (WhatsApp / Slack)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notification-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notification Service
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#top-k-trending" class="md-nav__link">
+    <span class="md-ellipsis">
+      Top-K / Trending
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#geo-search-uber-yelp-nearby" class="md-nav__link">
+    <span class="md-ellipsis">
+      Geo-search (Uber / Yelp "nearby")
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="common-system-designs">Common System Designs</h1>
+<blockquote>
+<p>Canonical designs at bullet-depth. Enough to speak fluently, not to implement.</p>
+</blockquote>
+<hr />
+<h2 id="url-shortener-bitly">URL Shortener (bit.ly)</h2>
+<p><strong>Scale</strong>: read-heavy (100:1), low storage.</p>
+<p><strong>API</strong>:
+<div class="highlight"><pre><span></span><code>POST /shorten { longUrl } → { shortUrl }
+GET  /{code}                → 301 redirect
+</code></pre></div></p>
+<p><strong>Code generation</strong> — pick one:
+- <strong>Base62 counter</strong> — auto-increment ID → base62 encode. Simple, sequential (guessable).
+- <strong>Hash + collision retry</strong> — MD5(longUrl)[:7]. Deterministic but collisions possible.
+- <strong>Pre-generated pool</strong> — background worker fills a "next codes" table. Best for high write throughput.</p>
+<p><strong>Storage</strong>: KV store (DynamoDB / Redis) keyed by shortcode. Values tiny.</p>
+<p><strong>Cache</strong>: hot codes in Redis with TTL. 90%+ hit rate typical.</p>
+<p><strong>Deep dives</strong>: analytics (async log → Kafka → warehouse), custom URLs, expiration, abuse detection.</p>
+<hr />
+<h2 id="rate-limiter">Rate Limiter</h2>
+<p><strong>Algorithms</strong>:
+| Algorithm | How | Trade-off |
+|-----------|-----|-----------|
+| <strong>Token bucket</strong> | Refill N tokens/sec, deduct per request | Allows bursts, simple |
+| <strong>Leaky bucket</strong> | Fixed drain rate | Smooth output, no bursts |
+| <strong>Fixed window</strong> | Counter per minute | Simple, edge burst at window boundary |
+| <strong>Sliding window log</strong> | Timestamp per request | Exact, expensive |
+| <strong>Sliding window counter</strong> | Weighted avg of 2 windows | Approx exact, cheap ← usually best |</p>
+<p><strong>Storage</strong>: Redis with atomic ops (<code>INCR</code> + <code>EXPIRE</code>, or Lua for sliding window).</p>
+<p><strong>Where it lives</strong>: API gateway (edge) — reject early, don't waste service capacity.</p>
+<p><strong>Distributed</strong>: sync counters via Redis; accept slight over-count vs per-node counters (which under-count).</p>
+<p><strong>Deep dives</strong>: per-user vs per-IP vs per-endpoint, tiered limits (free/paid), graceful degradation (429 + <code>Retry-After</code>).</p>
+<hr />
+<h2 id="news-feed-twitter-instagram">News Feed (Twitter / Instagram)</h2>
+<p><strong>Two strategies</strong>:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Fan-out on write (push)</th>
+<th>Fan-out on read (pull)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>How</strong></td>
+<td>On post, push to N follower inboxes</td>
+<td>On read, query recent posts from followees</td>
+</tr>
+<tr>
+<td><strong>Read latency</strong></td>
+<td>Fast (pre-computed)</td>
+<td>Slow (fanout at query time)</td>
+</tr>
+<tr>
+<td><strong>Write cost</strong></td>
+<td>High for celebrities (millions of writes/post)</td>
+<td>Cheap</td>
+</tr>
+<tr>
+<td><strong>Storage</strong></td>
+<td>High (N copies)</td>
+<td>Low</td>
+</tr>
+<tr>
+<td><strong>Best for</strong></td>
+<td>Users with small-to-medium followings</td>
+<td>Everyone (with hybrid)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Hybrid (real answer)</strong>:
+- Push for normal users.
+- <strong>Pull for celebrities</strong> (&gt;10K followers) — merge celebrity posts into user's inbox at read time.
+- Best of both worlds.</p>
+<p><strong>Storage</strong>:
+- Posts → Cassandra / DynamoDB, partitioned by userId.
+- Timeline → Redis sorted set per user (score = timestamp).</p>
+<p><strong>Deep dives</strong>: ranking (ML score), pagination cursors, media handling (S3 + CDN), edit/delete propagation.</p>
+<hr />
+<h2 id="chat-whatsapp-slack">Chat (WhatsApp / Slack)</h2>
+<p><strong>Scale</strong>: billions of messages/day, real-time delivery, offline support.</p>
+<p><strong>Delivery model</strong>:
+- <strong>WebSocket / long-lived connection</strong> from client to a "connection service".
+- Message goes: client → API → <strong>message service</strong> → <strong>fanout</strong> → recipient's connection service → device.
+- If offline: persist + push notification (APNs/FCM).</p>
+<p><strong>Storage</strong>:
+- Messages: Cassandra, partitioned by conversationId, sorted by timestamp.
+- Group metadata: SQL.
+- Delivery receipts: separate table (async writes).</p>
+<p><strong>1-on-1 vs group</strong>:
+- 1-on-1: single conversationId, 2 participants.
+- Group: fan-out to N recipients. For large groups (&gt;1K), consider write-to-shared-log + read-on-connect.</p>
+<p><strong>Consistency</strong>: eventual is fine — messages get an ID + timestamp; clients dedupe.</p>
+<p><strong>Deep dives</strong>: end-to-end encryption (Signal protocol), presence, typing indicators, message ordering.</p>
+<hr />
+<h2 id="notification-service">Notification Service</h2>
+<p><strong>Requirements</strong>: multi-channel (push, email, SMS, in-app), templated, retryable, rate-limited per user.</p>
+<p><strong>Architecture</strong>:
+<div class="highlight"><pre><span></span><code>Publisher → Kafka → Notification Service → [Channel Workers] → Provider APIs
+                          ↓
+                    Template DB, User Prefs DB
+</code></pre></div></p>
+<p><strong>Key concerns</strong>:
+- <strong>Idempotency</strong> — dedupe key per (userId, event) to avoid duplicates on retry.
+- <strong>User preferences</strong> — quiet hours, channel opt-outs, frequency caps.
+- <strong>Provider failover</strong> — APNs down? Queue and retry with backoff.
+- <strong>Priority queues</strong> — transactional (OTP) &gt; engagement.</p>
+<p><strong>Deep dives</strong>: DLQ + replay, batch/digest emails, delivery tracking.</p>
+<hr />
+<h2 id="top-k-trending">Top-K / Trending</h2>
+<p><strong>Approaches by scale</strong>:
+- <strong>Small (&lt;1M events/day)</strong>: sort in memory / SQL <code>ORDER BY count DESC LIMIT K</code>.
+- <strong>Medium</strong>: Redis sorted set (<code>ZINCRBY</code> + <code>ZREVRANGE</code>).
+- <strong>Large (Twitter-scale)</strong>: <strong>approximate counting</strong> — Count-Min Sketch + heap for top-K. Trades exactness for O(1) memory per item.</p>
+<p><strong>Real-time</strong>: sliding window over event stream (Flink, Kafka Streams).</p>
+<p><strong>Deep dives</strong>: preventing gaming (bots inflating counts), decay (weight recent &gt; old), personalization.</p>
+<hr />
+<h2 id="geo-search-uber-yelp-nearby">Geo-search (Uber / Yelp "nearby")</h2>
+<p><strong>Problem</strong>: given (lat, lng), find K nearest points in &lt;100ms.</p>
+<p><strong>Approaches</strong>:
+| Approach | How | When |
+|----------|-----|------|
+| <strong>Geohash</strong> | Encode lat/lng → prefix string; nearby = shared prefix | Simple, works well |
+| <strong>Quadtree</strong> | Recursive spatial subdivision | Uneven density (cities vs rural) |
+| <strong>S2 (Google)</strong> | Sphere → cells, hierarchical | Production-grade geo |
+| <strong>PostGIS / MongoDB 2dsphere</strong> | DB-native geo index | Small-medium apps |</p>
+<p><strong>Uber-specific twist</strong>: driver locations change every few seconds → in-memory geo-index (Redis GEO or custom S2), updated on driver heartbeat.</p>
+<p><strong>Deep dives</strong>: matching (ETA + surge pricing), consistency during hand-off, city-level sharding.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../../stylesheets/tasklist.js"></script>
+      
+    
+  </body>
+</html>

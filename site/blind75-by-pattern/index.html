@@ -1,0 +1,2197 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Learn coding interviews through pattern recognition, not memorization.">
+      
+      
+        <meta name="author" content="Chris Masters">
+      
+      
+        <link rel="canonical" href="https://cmas123456.github.io/coding-interview-handbook/blind75-by-pattern/">
+      
+      
+        <link rel="prev" href="../practice/">
+      
+      
+        <link rel="next" href="../blind75-drill/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
+    
+    
+      
+        <title>By Pattern - Coding Interview Handbook</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#blind-75-by-pattern" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Coding Interview Handbook" class="md-header__button md-logo" aria-label="Coding Interview Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Coding Interview Handbook
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              By Pattern
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../pattern-recognition/" class="md-tabs__link">
+        
+  
+    
+  
+  Pattern Recognition
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../complexity-cheatsheet/" class="md-tabs__link">
+        
+  
+    
+  
+  Big-O Cheat Sheet
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../practice/" class="md-tabs__link">
+        
+  
+    
+  
+  Blind Drill
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  Blind 75
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../patterns/arrays-hashing/" class="md-tabs__link">
+          
+  
+  Pattern Atlas
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../system-design/framework/" class="md-tabs__link">
+          
+  
+  System Design
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../senior-discussion/framework/" class="md-tabs__link">
+          
+  
+  Senior Discussion
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../glossary/" class="md-tabs__link">
+        
+  
+    
+  
+  Glossary
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Coding Interview Handbook" class="md-nav__button md-logo" aria-label="Coding Interview Handbook" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Coding Interview Handbook
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pattern-recognition/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Pattern Recognition
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../complexity-cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Big-O Cheat Sheet
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../practice/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blind Drill
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Blind 75
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Blind 75
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    By Pattern
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    By Pattern
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arrays-hashing-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays &amp; Hashing (11)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-pointers-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two Pointers (3)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sliding-window-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sliding Window (4)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binary-search-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binary Search (2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linked-lists-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linked Lists (5)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stack (1)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heap-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Heap (2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intervals-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intervals (5)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trees-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trees (11)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphs-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphs (5)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backtracking-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backtracking (2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-programming-i-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Programming I (11)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trie-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trie (3)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#union-find-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Union Find (2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greedy-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greedy (1)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-programming-ii-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Programming II (2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bit-manipulation-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bit Manipulation (5)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../blind75-drill/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Blind Drill
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Pattern Atlas
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            Pattern Atlas
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tier 1 — Core Patterns
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            Tier 1 — Core Patterns
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/arrays-hashing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arrays & Hashing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/two-pointers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Two Pointers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/sliding-window/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sliding Window
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/prefix-sum/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prefix Sum
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/binary-search/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Binary Search
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/linked-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Linked Lists
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/heap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Heap
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/intervals/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Intervals
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/tree/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trees
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/graph/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Graphs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/backtracking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Backtracking
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/dp-1d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dynamic Programming I
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Tier 2 — Extended Patterns
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            Tier 2 — Extended Patterns
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/monotonic-stack/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Monotonic Stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/queue/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Queue
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/trie/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trie
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/union-find/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Union Find
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/greedy/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Greedy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/dp-2d/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Dynamic Programming II
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../patterns/bit-manipulation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bit Manipulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    System Design
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            System Design
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-design/framework/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-design/building-blocks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Building Blocks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-design/estimation-numbers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Estimation Numbers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../system-design/patterns/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Common Designs
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Senior Discussion
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Senior Discussion
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senior-discussion/framework/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Framework
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senior-discussion/prompts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Prompts
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../senior-discussion/your-stories/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Your Stories
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../glossary/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Glossary
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#arrays-hashing-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Arrays &amp; Hashing (11)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#two-pointers-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Two Pointers (3)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sliding-window-4" class="md-nav__link">
+    <span class="md-ellipsis">
+      Sliding Window (4)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binary-search-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binary Search (2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#linked-lists-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Linked Lists (5)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#stack-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stack (1)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#heap-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Heap (2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#intervals-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Intervals (5)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trees-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trees (11)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#graphs-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphs (5)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#backtracking-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backtracking (2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-programming-i-11" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Programming I (11)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#trie-3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Trie (3)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#union-find-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Union Find (2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#greedy-1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Greedy (1)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dynamic-programming-ii-2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dynamic Programming II (2)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bit-manipulation-5" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bit Manipulation (5)
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="blind-75-by-pattern">Blind 75 — By Pattern</h1>
+<blockquote>
+<p>The canonical FAANG-prep list (75 problems), grouped by the pattern each one primarily teaches. Each entry has a <strong>🔑 trigger</strong> — the phrase or signal in the prompt that should fire the pattern in your head.</p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">How to use this view</p>
+<ul>
+<li>Read the trigger <strong>before</strong> opening the problem — it's your prediction.</li>
+<li>Open the problem, confirm the trigger matches what you see, then solve.</li>
+<li>🔒 = LeetCode Premium.</li>
+<li>Want to test recognition cold (no pattern, no trigger)? Use <strong><a href="../blind75-drill/">Blind 75 — Blind Drill</a></strong>.</li>
+</ul>
+</div>
+<hr />
+<p><strong>Total:</strong> 75 problems across 17 patterns. Difficulty: 19 🟢 Easy / 49 🟡 Medium / 7 🔴 Hard.</p>
+<hr />
+<h2 id="arrays-hashing-11"><a href="../patterns/arrays-hashing/">Arrays &amp; Hashing</a> (11)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/two-sum/">Two Sum</a><ul>
+<li>🔑 "return indices… sum to target" → hash map of complement.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/contains-duplicate/">Contains Duplicate</a><ul>
+<li>🔑 "any duplicates" / unsorted → Set, return on first hit.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/valid-anagram/">Valid Anagram</a><ul>
+<li>🔑 "anagram of" → char-count map (or sort both).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/group-anagrams/">Group Anagrams</a><ul>
+<li>🔑 "group strings that are anagrams" → key by sorted chars or char-count tuple.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/top-k-frequent-elements/">Top K Frequent Elements</a><ul>
+<li>🔑 "k most frequent" → count + bucket sort (O(n)) or heap (O(n log k)).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/product-of-array-except-self/">Product of Array Except Self</a><ul>
+<li>🔑 "product of all elements except i" / "no division" → prefix * suffix passes.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/encode-and-decode-strings/">Encode and Decode Strings</a> 🔒<ul>
+<li>🔑 "serialize list of strings" → length-prefix each (e.g. "5#hello").</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-consecutive-sequence/">Longest Consecutive Sequence</a><ul>
+<li>🔑 "longest consecutive sequence" / "O(n)" → Set; only start walks from sequence starts (n-1 not in set).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/rotate-image/">Rotate Image</a><ul>
+<li>🔑 "rotate 90° in-place" → transpose then reverse each row.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/spiral-matrix/">Spiral Matrix</a><ul>
+<li>🔑 "spiral order" → 4 shrinking boundaries (top/bottom/left/right).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/set-matrix-zeroes/">Set Matrix Zeroes</a><ul>
+<li>🔑 "in-place, zero out row/col" → use first row/col as marker flags.</li>
+</ul>
+</li>
+</ul>
+<h2 id="two-pointers-3"><a href="../patterns/two-pointers/">Two Pointers</a> (3)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/valid-palindrome/">Valid Palindrome</a><ul>
+<li>🔑 "palindrome ignoring non-alphanumeric" → l/r pointers, skip non-alnum, compare lowercase.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/3sum/">3Sum</a><ul>
+<li>🔑 "triplets that sum to 0", "no duplicates" → sort + fix i, two-pointer for rest; skip dupes.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/container-with-most-water/">Container With Most Water</a><ul>
+<li>🔑 "max water" / two heights → l/r pointers, move the shorter wall.</li>
+</ul>
+</li>
+</ul>
+<h2 id="sliding-window-4"><a href="../patterns/sliding-window/">Sliding Window</a> (4)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/best-time-to-buy-and-sell-stock/">Best Time to Buy and Sell Stock</a><ul>
+<li>🔑 "max profit, buy before sell" → track min-so-far + max diff (single pass).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Longest Substring Without Repeating Characters</a><ul>
+<li>🔑 "longest substring without repeating" → window + Set/lastIndex map, shrink on dup.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-repeating-character-replacement/">Longest Repeating Character Replacement</a><ul>
+<li>🔑 "replace at most k chars, longest same-letter" → window; shrink while (len − maxFreq) &gt; k.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/minimum-window-substring/">Minimum Window Substring</a><ul>
+<li>🔑 "smallest window containing all chars of t" → need/have counts, shrink when have == need.</li>
+</ul>
+</li>
+</ul>
+<h2 id="binary-search-2"><a href="../patterns/binary-search/">Binary Search</a> (2)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/">Find Minimum in Rotated Sorted Array</a><ul>
+<li>🔑 "rotated sorted, find min, O(log n)" → binary search; compare mid to right.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">Search in Rotated Sorted Array</a><ul>
+<li>🔑 "rotated sorted, find target, O(log n)" → binary search; figure out which half is sorted.</li>
+</ul>
+</li>
+</ul>
+<h2 id="linked-lists-5"><a href="../patterns/linked-list/">Linked Lists</a> (5)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/reverse-linked-list/">Reverse Linked List</a><ul>
+<li>🔑 "reverse a linked list" → prev/curr/next iterative swap.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/merge-two-sorted-lists/">Merge Two Sorted Lists</a><ul>
+<li>🔑 "merge two sorted lists" → dummy head + tail pointer, splice smaller.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/linked-list-cycle/">Linked List Cycle</a><ul>
+<li>🔑 "has a cycle" → Floyd's slow/fast pointers, meet means cycle.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/reorder-list/">Reorder List</a><ul>
+<li>🔑 "L0→Ln→L1→Ln-1…" → find mid (slow/fast) + reverse second half + merge.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/remove-nth-node-from-end-of-list/">Remove Nth Node From End of List</a><ul>
+<li>🔑 "nth from end, one pass" → two pointers, gap of n.</li>
+</ul>
+</li>
+</ul>
+<h2 id="stack-1"><a href="../patterns/stack/">Stack</a> (1)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/valid-parentheses/">Valid Parentheses</a><ul>
+<li>🔑 "valid parentheses ()[]{}" → stack; push opens, pop+match on close.</li>
+</ul>
+</li>
+</ul>
+<h2 id="heap-2"><a href="../patterns/heap/">Heap</a> (2)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/merge-k-sorted-lists/">Merge k Sorted Lists</a><ul>
+<li>🔑 "merge k sorted lists" → min-heap of heads (or divide-and-conquer pairwise merge).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/find-median-from-data-stream/">Find Median from Data Stream</a><ul>
+<li>🔑 "median of a stream" → two heaps (max-heap low half, min-heap high half).</li>
+</ul>
+</li>
+</ul>
+<h2 id="intervals-5"><a href="../patterns/intervals/">Intervals</a> (5)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/meeting-rooms/">Meeting Rooms</a> 🔒<ul>
+<li>🔑 "can attend all meetings" → sort by start; check any overlap.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/insert-interval/">Insert Interval</a><ul>
+<li>🔑 "insert and merge intervals, sorted" → 3 passes: before, overlapping (merge), after.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/merge-intervals/">Merge Intervals</a><ul>
+<li>🔑 "merge overlapping intervals" → sort by start; merge if curr.start ≤ last.end.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/non-overlapping-intervals/">Non-overlapping Intervals</a><ul>
+<li>🔑 "min removals to make non-overlapping" → sort by end; greedy keep earliest end.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/meeting-rooms-ii/">Meeting Rooms II</a> 🔒<ul>
+<li>🔑 "min rooms needed" → sort starts and ends separately; sweep, or min-heap of end times.</li>
+</ul>
+</li>
+</ul>
+<h2 id="trees-11"><a href="../patterns/tree/">Trees</a> (11)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/invert-binary-tree/">Invert Binary Tree</a><ul>
+<li>🔑 "invert / mirror tree" → recurse, swap left/right.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">Maximum Depth of Binary Tree</a><ul>
+<li>🔑 "max depth" → 1 + max(depth(left), depth(right)).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/same-tree/">Same Tree</a><ul>
+<li>🔑 "same structure and values" → recurse both, compare nodes.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/subtree-of-another-tree/">Subtree of Another Tree</a><ul>
+<li>🔑 "is t a subtree of s" → recurse s; at each node run sameTree(node, t).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/">Lowest Common Ancestor of a Binary Search Tree</a><ul>
+<li>🔑 "LCA in BST" → first node where p and q split (one ≤ node ≤ other).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/binary-tree-level-order-traversal/">Binary Tree Level Order Traversal</a><ul>
+<li>🔑 "level by level" → BFS with queue; capture size per level.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/validate-binary-search-tree/">Validate Binary Search Tree</a><ul>
+<li>🔑 "valid BST" → recurse with (min, max) bounds, not just parent compare.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/kth-smallest-element-in-a-bst/">Kth Smallest Element in a BST</a><ul>
+<li>🔑 "kth smallest in BST" → in-order traversal, stop at k.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/">Construct Binary Tree from Preorder and Inorder Traversal</a><ul>
+<li>🔑 "build tree from preorder + inorder" → preorder gives root, inorder splits left/right; index map for O(n).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/binary-tree-maximum-path-sum/">Binary Tree Maximum Path Sum</a><ul>
+<li>🔑 "max path sum, any node to any" → post-order; return one-arm, update global with both arms.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/serialize-and-deserialize-binary-tree/">Serialize and Deserialize Binary Tree</a><ul>
+<li>🔑 "serialize/deserialize tree" → preorder with null markers; deserialize with queue/index.</li>
+</ul>
+</li>
+</ul>
+<h2 id="graphs-5"><a href="../patterns/graph/">Graphs</a> (5)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/number-of-islands/">Number of Islands</a><ul>
+<li>🔑 "count islands in grid" → DFS/BFS flood-fill, mark visited.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/clone-graph/">Clone Graph</a><ul>
+<li>🔑 "deep copy graph" → DFS/BFS + visited map (old→new) to avoid cycles.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/pacific-atlantic-water-flow/">Pacific Atlantic Water Flow</a><ul>
+<li>🔑 "cells reaching both oceans" → BFS/DFS inward from each border; intersect two visited sets.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/course-schedule/">Course Schedule</a><ul>
+<li>🔑 "can finish all courses" → cycle detection in directed graph (DFS colors or Kahn's indegree).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/alien-dictionary/">Alien Dictionary</a> 🔒<ul>
+<li>🔑 "order of letters from sorted words" → build edges from adjacent word pairs; topological sort (Kahn's).</li>
+</ul>
+</li>
+</ul>
+<h2 id="backtracking-2"><a href="../patterns/backtracking/">Backtracking</a> (2)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/combination-sum/">Combination Sum</a><ul>
+<li>🔑 "all combinations summing to target, reuse allowed" → backtrack; pass start index to avoid permutations.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/word-search/">Word Search</a><ul>
+<li>🔑 "word in grid, adjacent cells" → DFS from each cell; mark visited then unmark on return.</li>
+</ul>
+</li>
+</ul>
+<h2 id="dynamic-programming-i-11"><a href="../patterns/dp-1d/">Dynamic Programming I</a> (11)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/climbing-stairs/">Climbing Stairs</a><ul>
+<li>🔑 "ways to climb n stairs (1 or 2)" → Fibonacci: dp[i] = dp[i-1] + dp[i-2].</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/house-robber/">House Robber</a><ul>
+<li>🔑 "max sum, no two adjacent" → dp[i] = max(dp[i-1], dp[i-2] + nums[i]).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/house-robber-ii/">House Robber II</a><ul>
+<li>🔑 "houses in a circle" → run house-robber twice: [0..n-2] and [1..n-1], take max.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-palindromic-substring/">Longest Palindromic Substring</a><ul>
+<li>🔑 "longest palindromic substring" → expand around each center (odd + even).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/palindromic-substrings/">Palindromic Substrings</a><ul>
+<li>🔑 "count palindromic substrings" → expand around each center, count expansions.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/decode-ways/">Decode Ways</a><ul>
+<li>🔑 "decode digits to letters A-Z" → dp; check 1-digit (1-9) and 2-digit (10-26) at each step.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/coin-change/">Coin Change</a><ul>
+<li>🔑 "fewest coins to make amount" → unbounded knapsack; dp[a] = min(dp[a-c]+1).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/maximum-product-subarray/">Maximum Product Subarray</a><ul>
+<li>🔑 "max product subarray" → track curMax AND curMin (negatives flip).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/word-break/">Word Break</a><ul>
+<li>🔑 "can string be segmented into dict words" → dp[i] = any j where dp[j] &amp;&amp; s[j..i] in dict.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-increasing-subsequence/">Longest Increasing Subsequence</a><ul>
+<li>🔑 "longest increasing subseq" → O(n²) dp or O(n log n) with patience/binary search.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/maximum-subarray/">Maximum Subarray</a><ul>
+<li>🔑 "max sum subarray" → Kadane: curSum = max(num, curSum + num).</li>
+</ul>
+</li>
+</ul>
+<h2 id="trie-3"><a href="../patterns/trie/">Trie</a> (3)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/implement-trie-prefix-tree/">Implement Trie (Prefix Tree)</a><ul>
+<li>🔑 "insert/search/startsWith" → classic trie: children map + isEnd flag.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/design-add-and-search-words-data-structure/">Design Add and Search Words Data Structure</a><ul>
+<li>🔑 "search with . wildcard" → trie + DFS; on . recurse all children.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🔴 <strong>Hard</strong> — <a href="https://leetcode.com/problems/word-search-ii/">Word Search II</a><ul>
+<li>🔑 "find all words in board" → build trie of words; DFS from each cell, prune via trie.</li>
+</ul>
+</li>
+</ul>
+<h2 id="union-find-2"><a href="../patterns/union-find/">Union Find</a> (2)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/number-of-connected-components-in-an-undirected-graph/">Number of Connected Components in an Undirected Graph</a> 🔒<ul>
+<li>🔑 "count connected components" → union-find on edges; count roots. (or DFS).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/graph-valid-tree/">Graph Valid Tree</a> 🔒<ul>
+<li>🔑 "valid tree: connected + no cycle" → union-find; reject union of same root; need exactly n-1 edges.</li>
+</ul>
+</li>
+</ul>
+<h2 id="greedy-1"><a href="../patterns/greedy/">Greedy</a> (1)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/jump-game/">Jump Game</a><ul>
+<li>🔑 "can reach last index" → greedy: track furthest reachable; fail if i &gt; reach.</li>
+</ul>
+</li>
+</ul>
+<h2 id="dynamic-programming-ii-2"><a href="../patterns/dp-2d/">Dynamic Programming II</a> (2)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/unique-paths/">Unique Paths</a><ul>
+<li>🔑 "paths in m×n grid, right/down only" → dp[i][j] = dp[i-1][j] + dp[i][j-1] (or C(m+n-2, m-1)).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/longest-common-subsequence/">Longest Common Subsequence</a><ul>
+<li>🔑 "LCS of two strings" → 2D dp; match → dp[i-1][j-1]+1, else max(up,left).</li>
+</ul>
+</li>
+</ul>
+<h2 id="bit-manipulation-5"><a href="../patterns/bit-manipulation/">Bit Manipulation</a> (5)</h2>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/number-of-1-bits/">Number of 1 Bits</a><ul>
+<li>🔑 "count set bits" → loop n &amp;= n-1 (clears lowest set bit each time).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/counting-bits/">Counting Bits</a><ul>
+<li>🔑 "set bits for 0..n" → dp: bits[i] = bits[i &gt;&gt; 1] + (i &amp; 1).</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/reverse-bits/">Reverse Bits</a><ul>
+<li>🔑 "reverse 32 bits" → shift result left, OR low bit of n, n &gt;&gt;= 1, 32 times.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟢 <strong>Easy</strong> — <a href="https://leetcode.com/problems/missing-number/">Missing Number</a><ul>
+<li>🔑 "missing in [0..n]" → XOR all indices and values; or sum diff.</li>
+</ul>
+</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> 🟡 <strong>Medium</strong> — <a href="https://leetcode.com/problems/sum-of-two-integers/">Sum of Two Integers</a><ul>
+<li>🔑 "add without + or −" → XOR for sum-no-carry, AND&lt;&lt;1 for carry; loop until carry == 0.</li>
+</ul>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+        <script src="../stylesheets/tasklist.js"></script>
+      
+    
+  </body>
+</html>
