@@ -12,23 +12,25 @@
         <meta name="author" content="Chris Masters">
       
       
-        <link rel="canonical" href="https://cmas123456.github.io/coding-interview-handbook/">
+        <link rel="canonical" href="https://cmas123456.github.io/coding-interview-handbook/system-design/estimation-numbers/">
       
       
+        <link rel="prev" href="../building-blocks/">
       
-        <link rel="next" href="pattern-recognition/">
+      
+        <link rel="next" href="../patterns/">
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.44">
     
     
       
-        <title>Coding Interview Handbook</title>
+        <title>Estimation Numbers - Coding Interview Handbook</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.0253249f.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.0253249f.min.css">
       
       
 
@@ -47,9 +49,9 @@
       
     
     
-      <link rel="stylesheet" href="stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -68,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#coding-interview-handbook" class="md-skip">
+        <a href="#estimation-numbers" class="md-skip">
           Skip to content
         </a>
       
@@ -82,7 +84,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="Coding Interview Handbook" class="md-header__button md-logo" aria-label="Coding Interview Handbook" data-md-component="logo">
+    <a href="../.." title="Coding Interview Handbook" class="md-header__button md-logo" aria-label="Coding Interview Handbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -102,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              Estimation Numbers
             
           </span>
         </div>
@@ -171,11 +173,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="." class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
         
   
     
@@ -192,7 +192,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="pattern-recognition/" class="md-tabs__link">
+      <a href="../../pattern-recognition/" class="md-tabs__link">
         
   
     
@@ -209,7 +209,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="complexity-cheatsheet/" class="md-tabs__link">
+      <a href="../../complexity-cheatsheet/" class="md-tabs__link">
         
   
     
@@ -226,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="practice/" class="md-tabs__link">
+      <a href="../../practice/" class="md-tabs__link">
         
   
     
@@ -245,7 +245,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="blind75-by-pattern/" class="md-tabs__link">
+        <a href="../../blind75-by-pattern/" class="md-tabs__link">
           
   
   Blind 75
@@ -269,7 +269,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="patterns/arrays-hashing/" class="md-tabs__link">
+        <a href="../../patterns/arrays-hashing/" class="md-tabs__link">
           
   
   Pattern Atlas
@@ -286,11 +286,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="system-design/framework/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../framework/" class="md-tabs__link">
           
   
   System Design
@@ -308,7 +310,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="senior-discussion/framework/" class="md-tabs__link">
+        <a href="../../senior-discussion/framework/" class="md-tabs__link">
           
   
   Senior Discussion
@@ -341,7 +343,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="Coding Interview Handbook" class="md-nav__button md-logo" aria-label="Coding Interview Handbook" data-md-component="logo">
+    <a href="../.." title="Coding Interview Handbook" class="md-nav__button md-logo" aria-label="Coding Interview Handbook" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -356,30 +358,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Home
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -388,44 +370,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#what-this-is" class="md-nav__link">
-    <span class="md-ellipsis">
-      What this is
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#pattern-atlas" class="md-nav__link">
-    <span class="md-ellipsis">
-      Pattern Atlas
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -437,7 +381,7 @@
   
   
     <li class="md-nav__item">
-      <a href="pattern-recognition/" class="md-nav__link">
+      <a href="../../pattern-recognition/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -457,7 +401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="complexity-cheatsheet/" class="md-nav__link">
+      <a href="../../complexity-cheatsheet/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -477,7 +421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="practice/" class="md-nav__link">
+      <a href="../../practice/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -539,7 +483,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blind75-by-pattern/" class="md-nav__link">
+      <a href="../../blind75-by-pattern/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -560,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="blind75-drill/" class="md-nav__link">
+      <a href="../../blind75-drill/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -672,7 +616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/arrays-hashing/" class="md-nav__link">
+      <a href="../../patterns/arrays-hashing/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -693,7 +637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/two-pointers/" class="md-nav__link">
+      <a href="../../patterns/two-pointers/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -714,7 +658,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/sliding-window/" class="md-nav__link">
+      <a href="../../patterns/sliding-window/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -735,7 +679,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/prefix-sum/" class="md-nav__link">
+      <a href="../../patterns/prefix-sum/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -756,7 +700,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/binary-search/" class="md-nav__link">
+      <a href="../../patterns/binary-search/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -777,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/linked-list/" class="md-nav__link">
+      <a href="../../patterns/linked-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -798,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/stack/" class="md-nav__link">
+      <a href="../../patterns/stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -819,7 +763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/heap/" class="md-nav__link">
+      <a href="../../patterns/heap/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -840,7 +784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/intervals/" class="md-nav__link">
+      <a href="../../patterns/intervals/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -861,7 +805,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/tree/" class="md-nav__link">
+      <a href="../../patterns/tree/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -882,7 +826,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/graph/" class="md-nav__link">
+      <a href="../../patterns/graph/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -903,7 +847,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/backtracking/" class="md-nav__link">
+      <a href="../../patterns/backtracking/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -924,7 +868,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/dp-1d/" class="md-nav__link">
+      <a href="../../patterns/dp-1d/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -995,7 +939,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/monotonic-stack/" class="md-nav__link">
+      <a href="../../patterns/monotonic-stack/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1016,7 +960,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/queue/" class="md-nav__link">
+      <a href="../../patterns/queue/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1037,7 +981,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/trie/" class="md-nav__link">
+      <a href="../../patterns/trie/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1058,7 +1002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/union-find/" class="md-nav__link">
+      <a href="../../patterns/union-find/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1079,7 +1023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/greedy/" class="md-nav__link">
+      <a href="../../patterns/greedy/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1100,7 +1044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/dp-2d/" class="md-nav__link">
+      <a href="../../patterns/dp-2d/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1121,7 +1065,7 @@
   
   
     <li class="md-nav__item">
-      <a href="patterns/bit-manipulation/" class="md-nav__link">
+      <a href="../../patterns/bit-manipulation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1154,27 +1098,30 @@
       
   
   
+    
   
   
+  
     
     
     
+      
+        
+        
       
       
         
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" checked>
         
           
-        
-        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
-        
-          
-          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="">
             
   
   <span class="md-ellipsis">
@@ -1185,7 +1132,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_7">
             <span class="md-nav__icon md-icon"></span>
             System Design
@@ -1199,7 +1146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system-design/framework/" class="md-nav__link">
+      <a href="../framework/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1220,7 +1167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system-design/building-blocks/" class="md-nav__link">
+      <a href="../building-blocks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1238,10 +1185,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="system-design/estimation-numbers/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Estimation Numbers
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1250,6 +1217,107 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#latency-numbers-every-swe-should-know" class="md-nav__link">
+    <span class="md-ellipsis">
+      Latency numbers every SWE should know
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#powers-of-2-10" class="md-nav__link">
+    <span class="md-ellipsis">
+      Powers of 2 / 10
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-cheatsheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time cheatsheet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qps-math-do-it-in-your-head" class="md-nav__link">
+    <span class="md-ellipsis">
+      QPS math (do it in your head)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage math
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bandwidth-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bandwidth math
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single-machine-capacity-rules-of-thumb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single-machine capacity rules of thumb
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characterbyte-sizing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Character/byte sizing
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1262,7 +1330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="system-design/patterns/" class="md-nav__link">
+      <a href="../patterns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1332,7 +1400,7 @@
   
   
     <li class="md-nav__item">
-      <a href="senior-discussion/framework/" class="md-nav__link">
+      <a href="../../senior-discussion/framework/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1353,7 +1421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="senior-discussion/prompts/" class="md-nav__link">
+      <a href="../../senior-discussion/prompts/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1374,7 +1442,7 @@
   
   
     <li class="md-nav__item">
-      <a href="senior-discussion/your-stories/" class="md-nav__link">
+      <a href="../../senior-discussion/your-stories/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1422,18 +1490,81 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-this-is" class="md-nav__link">
+  <a href="#latency-numbers-every-swe-should-know" class="md-nav__link">
     <span class="md-ellipsis">
-      What this is
+      Latency numbers every SWE should know
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#pattern-atlas" class="md-nav__link">
+  <a href="#powers-of-2-10" class="md-nav__link">
     <span class="md-ellipsis">
-      Pattern Atlas
+      Powers of 2 / 10
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#time-cheatsheet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Time cheatsheet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#qps-math-do-it-in-your-head" class="md-nav__link">
+    <span class="md-ellipsis">
+      QPS math (do it in your head)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#storage-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      Storage math
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bandwidth-math" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bandwidth math
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#single-machine-capacity-rules-of-thumb" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single-machine capacity rules of thumb
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#availability" class="md-nav__link">
+    <span class="md-ellipsis">
+      Availability
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#characterbyte-sizing" class="md-nav__link">
+    <span class="md-ellipsis">
+      Character/byte sizing
     </span>
   </a>
   
@@ -1454,38 +1585,330 @@
                   
 
 
-<h1 id="coding-interview-handbook">Coding Interview Handbook</h1>
+<h1 id="estimation-numbers">Estimation Numbers</h1>
 <blockquote>
-<p>Learn coding interviews through <strong>pattern recognition</strong>, not memorization.</p>
+<p>Memorize these. Recite them mid-interview to make your estimates credible.</p>
 </blockquote>
-<div class="admonition tip">
-<p class="admonition-title">Cramming for an interview? Start here</p>
-<ol>
-<li>Read <strong><a href="pattern-recognition/">Pattern Recognition</a></strong> — the decision tree that maps any prompt to a pattern in 30 seconds.</li>
-<li>Skim the <strong>Cheat Card</strong> at the top of each <a href="patterns/arrays-hashing/">Tier 1 pattern page</a> — that's the 30-second review of when to use it.</li>
-<li>Drill 2–3 problems per pattern from the "Related Problems" list at the bottom of each page.</li>
-<li>Keep the <strong><a href="complexity-cheatsheet/">Big-O Cheat Sheet</a></strong> open in a tab.</li>
-</ol>
-</div>
 <hr />
-<h2 id="what-this-is">What this is</h2>
-<p>A JavaScript-focused interview handbook organized around <strong>20 reusable patterns</strong>. Instead of memorizing hundreds of LeetCode solutions, you learn to:</p>
+<h2 id="latency-numbers-every-swe-should-know">Latency numbers every SWE should know</h2>
+<table>
+<thead>
+<tr>
+<th>Operation</th>
+<th>Time</th>
+<th>Mental model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L1 cache reference</td>
+<td>0.5 ns</td>
+<td>Instant</td>
+</tr>
+<tr>
+<td>Branch mispredict</td>
+<td>5 ns</td>
+<td></td>
+</tr>
+<tr>
+<td>L2 cache reference</td>
+<td>7 ns</td>
+<td></td>
+</tr>
+<tr>
+<td>Mutex lock/unlock</td>
+<td>25 ns</td>
+<td></td>
+</tr>
+<tr>
+<td>Main memory reference</td>
+<td>100 ns</td>
+<td>200x L1</td>
+</tr>
+<tr>
+<td>Compress 1KB (Zippy)</td>
+<td>3 μs</td>
+<td></td>
+</tr>
+<tr>
+<td>Send 1KB over 1 Gbps</td>
+<td>10 μs</td>
+<td></td>
+</tr>
+<tr>
+<td>Read 4KB from SSD</td>
+<td>150 μs</td>
+<td></td>
+</tr>
+<tr>
+<td>Read 1MB sequentially from memory</td>
+<td>250 μs</td>
+<td></td>
+</tr>
+<tr>
+<td>Round trip within same datacenter</td>
+<td><strong>500 μs</strong></td>
+<td>← anchor</td>
+</tr>
+<tr>
+<td>Read 1MB sequentially from SSD</td>
+<td>1 ms</td>
+<td></td>
+</tr>
+<tr>
+<td>Disk seek (spinning)</td>
+<td>10 ms</td>
+<td></td>
+</tr>
+<tr>
+<td>Read 1MB sequentially from spinning disk</td>
+<td>20 ms</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Round trip US East ↔ US West</strong></td>
+<td><strong>70 ms</strong></td>
+<td>← anchor</td>
+</tr>
+<tr>
+<td><strong>Round trip US ↔ Europe</strong></td>
+<td><strong>150 ms</strong></td>
+<td>← anchor</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rules of thumb</strong>:
+- Memory: <strong>~ns</strong>
+- SSD: <strong>~100 μs</strong>
+- Same-DC network: <strong>~ms</strong>
+- Cross-continent network: <strong>~100 ms</strong></p>
+<hr />
+<h2 id="powers-of-2-10">Powers of 2 / 10</h2>
+<table>
+<thead>
+<tr>
+<th>Power of 2</th>
+<th>Value</th>
+<th>≈ Power of 10</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2^10</td>
+<td>1,024</td>
+<td>10^3 (thousand, KB)</td>
+</tr>
+<tr>
+<td>2^20</td>
+<td>~1M</td>
+<td>10^6 (million, MB)</td>
+</tr>
+<tr>
+<td>2^30</td>
+<td>~1B</td>
+<td>10^9 (billion, GB)</td>
+</tr>
+<tr>
+<td>2^32</td>
+<td>~4B</td>
+<td>(max unsigned int)</td>
+</tr>
+<tr>
+<td>2^40</td>
+<td>~1T</td>
+<td>10^12 (trillion, TB)</td>
+</tr>
+<tr>
+<td>2^50</td>
+<td>~1000T</td>
+<td>10^15 (PB)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="time-cheatsheet">Time cheatsheet</h2>
+<table>
+<thead>
+<tr>
+<th>Interval</th>
+<th>Seconds</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1 minute</td>
+<td>60</td>
+</tr>
+<tr>
+<td>1 hour</td>
+<td>3,600</td>
+</tr>
+<tr>
+<td>1 day</td>
+<td><strong>86,400</strong> ≈ 10^5</td>
+</tr>
+<tr>
+<td>1 month (30d)</td>
+<td>~2.5M ≈ 2.5 × 10^6</td>
+</tr>
+<tr>
+<td>1 year</td>
+<td>~31.5M ≈ 3 × 10^7</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="qps-math-do-it-in-your-head">QPS math (do it in your head)</h2>
+<p><strong>Trick</strong>: <code>QPS = daily_events / 86,400 ≈ daily_events / 10^5</code></p>
+<table>
+<thead>
+<tr>
+<th>Daily events</th>
+<th>Avg QPS</th>
+<th>Peak QPS (3x)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1M</td>
+<td>12</td>
+<td>36</td>
+</tr>
+<tr>
+<td>10M</td>
+<td>116</td>
+<td>350</td>
+</tr>
+<tr>
+<td>100M</td>
+<td>1,160</td>
+<td>3,500</td>
+</tr>
+<tr>
+<td>1B</td>
+<td>11,600</td>
+<td>35,000</td>
+</tr>
+<tr>
+<td>10B</td>
+<td>116,000</td>
+<td>350,000</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Assume peak = 2–3x average</strong> unless told otherwise.</p>
+<hr />
+<h2 id="storage-math">Storage math</h2>
+<p>Template:
+<div class="highlight"><pre><span></span><code>DAU × actions_per_user × bytes_per_action × retention_days
+</code></pre></div></p>
+<p>Example — 100M DAU, 10 posts/day, 1KB per post, 5 years:
+<div class="highlight"><pre><span></span><code>100M × 10 × 1KB × 365 × 5 = 1.8 PB
+</code></pre></div></p>
+<p><strong>Multiplier for indexes + replication (×3)</strong>: ~5.5 PB total storage cost.</p>
+<hr />
+<h2 id="bandwidth-math">Bandwidth math</h2>
+<p><strong>Per-request bandwidth</strong>: <code>QPS × avg_bytes</code></p>
+<p>Example — 10K QPS × 5KB response = 50 MB/s = <strong>400 Mbps</strong> egress.</p>
+<p>Common numbers:
+- 1 Gbps ≈ 125 MB/s
+- 10 Gbps ≈ 1.25 GB/s
+- A modern server NIC: 10-40 Gbps</p>
+<hr />
+<h2 id="single-machine-capacity-rules-of-thumb">Single-machine capacity rules of thumb</h2>
+<table>
+<thead>
+<tr>
+<th>Component</th>
+<th>Ballpark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU cores per server</td>
+<td>16–64</td>
+</tr>
+<tr>
+<td>RAM per server</td>
+<td>64–512 GB</td>
+</tr>
+<tr>
+<td>SSD per server</td>
+<td>1–10 TB</td>
+</tr>
+<tr>
+<td>Nginx QPS (static)</td>
+<td>50K+</td>
+</tr>
+<tr>
+<td>Web app QPS (JSON)</td>
+<td>1K–10K per instance</td>
+</tr>
+<tr>
+<td>Postgres writes/sec</td>
+<td>10K–50K (single node)</td>
+</tr>
+<tr>
+<td>Postgres reads/sec</td>
+<td>100K+ (with read replicas)</td>
+</tr>
+<tr>
+<td>Redis ops/sec</td>
+<td>100K+ per instance</td>
+</tr>
+<tr>
+<td>Kafka throughput</td>
+<td>100K+ msg/sec per broker</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Read</strong>: "How many machines do I need?" → total QPS ÷ per-machine capacity, then ×1.5 headroom.</p>
+<hr />
+<h2 id="availability">Availability</h2>
+<table>
+<thead>
+<tr>
+<th>SLA</th>
+<th>Downtime/year</th>
+<th>Downtime/month</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>99%</td>
+<td>3.65 days</td>
+<td>7.2 hours</td>
+</tr>
+<tr>
+<td>99.9% ("three 9s")</td>
+<td>8.76 hours</td>
+<td>43.2 min</td>
+</tr>
+<tr>
+<td>99.99% ("four 9s")</td>
+<td>52.6 min</td>
+<td>4.3 min</td>
+</tr>
+<tr>
+<td>99.999% ("five 9s")</td>
+<td>5.26 min</td>
+<td>26 sec</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Rule</strong>: adding a 9 = 10x harder + 10x more cost.</p>
+<hr />
+<h2 id="characterbyte-sizing">Character/byte sizing</h2>
 <ul>
-<li><strong>Recognize</strong> which pattern a problem fits in under a minute.</li>
-<li><strong>Apply</strong> a template you already know.</li>
-<li><strong>Explain</strong> your reasoning out loud — the part interviewers actually score.</li>
+<li>1 ASCII char = 1 byte</li>
+<li>1 UTF-8 char = 1–4 bytes (assume 2 for mixed content)</li>
+<li>Tweet (280 chars) ≈ 300 bytes</li>
+<li>Typical JSON object ≈ 500 B – 2 KB</li>
+<li>Thumbnail image ≈ 20–50 KB</li>
+<li>Full-res photo ≈ 500 KB – 5 MB</li>
+<li>1 min HD video ≈ 50 MB</li>
+<li>1 min 4K video ≈ 300 MB</li>
 </ul>
-<p>Every pattern page has the same 11 sections, the same Cheat Card up top, and runnable JS code you can paste into a console.</p>
-<hr />
-<h2 id="pattern-atlas">Pattern Atlas</h2>
-<p><strong>Tier 1 — Core Patterns</strong> (start here, roughly in learning order):</p>
-<p><a href="patterns/arrays-hashing/">Arrays &amp; Hashing</a> · <a href="patterns/two-pointers/">Two Pointers</a> · <a href="patterns/sliding-window/">Sliding Window</a> · <a href="patterns/prefix-sum/">Prefix Sum</a> · <a href="patterns/binary-search/">Binary Search</a> · <a href="patterns/linked-list/">Linked Lists</a> · <a href="patterns/stack/">Stack</a> · <a href="patterns/heap/">Heap</a> · <a href="patterns/intervals/">Intervals</a> · <a href="patterns/tree/">Trees</a> · <a href="patterns/graph/">Graphs</a> · <a href="patterns/backtracking/">Backtracking</a> · <a href="patterns/dp-1d/">Dynamic Programming I</a></p>
-<p><strong>Tier 2 — Extended Patterns</strong> (less common, but worth a skim):</p>
-<p><a href="patterns/monotonic-stack/">Monotonic Stack</a> · <a href="patterns/queue/">Queue</a> · <a href="patterns/trie/">Trie</a> · <a href="patterns/union-find/">Union Find</a> · <a href="patterns/greedy/">Greedy</a> · <a href="patterns/dp-2d/">Dynamic Programming II</a> · <a href="patterns/bit-manipulation/">Bit Manipulation</a></p>
-<hr />
-<blockquote>
-<p><strong>Goal:</strong> learn the patterns once, apply them everywhere.</p>
-</blockquote>
 
 
 
@@ -1538,12 +1961,12 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tabs", "navigation.sections", "navigation.expand", "navigation.top", "search.highlight", "search.suggest", "content.code.copy", "toc.follow"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83f73b43.min.js"></script>
       
-        <script src="stylesheets/tasklist.js"></script>
+        <script src="../../stylesheets/tasklist.js"></script>
       
     
   </body>

@@ -2,106 +2,134 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/blind75-by-pattern/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/blind75-drill/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/complexity-cheatsheet/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/pattern-recognition/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/practice/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/arrays-hashing/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/backtracking/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/binary-search/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/bit-manipulation/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/dp-1d/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/dp-2d/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/graph/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/greedy/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/heap/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/intervals/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/linked-list/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/monotonic-stack/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/prefix-sum/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/queue/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/sliding-window/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/stack/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/tree/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/trie/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/two-pointers/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
     </url>
     <url>
          <loc>https://cmas123456.github.io/coding-interview-handbook/patterns/union-find/</loc>
-         <lastmod>2026-06-28</lastmod>
+         <lastmod>2026-07-02</lastmod>
+    </url>
+    <url>
+         <loc>https://cmas123456.github.io/coding-interview-handbook/senior-discussion/framework/</loc>
+         <lastmod>2026-07-02</lastmod>
+    </url>
+    <url>
+         <loc>https://cmas123456.github.io/coding-interview-handbook/senior-discussion/prompts/</loc>
+         <lastmod>2026-07-02</lastmod>
+    </url>
+    <url>
+         <loc>https://cmas123456.github.io/coding-interview-handbook/senior-discussion/your-stories/</loc>
+         <lastmod>2026-07-02</lastmod>
+    </url>
+    <url>
+         <loc>https://cmas123456.github.io/coding-interview-handbook/system-design/building-blocks/</loc>
+         <lastmod>2026-07-02</lastmod>
+    </url>
+    <url>
+         <loc>https://cmas123456.github.io/coding-interview-handbook/system-design/estimation-numbers/</loc>
+         <lastmod>2026-07-02</lastmod>
+    </url>
+    <url>
+         <loc>https://cmas123456.github.io/coding-interview-handbook/system-design/framework/</loc>
+         <lastmod>2026-07-02</lastmod>
+    </url>
+    <url>
+         <loc>https://cmas123456.github.io/coding-interview-handbook/system-design/patterns/</loc>
+         <lastmod>2026-07-02</lastmod>
     </url>
 </urlset>
