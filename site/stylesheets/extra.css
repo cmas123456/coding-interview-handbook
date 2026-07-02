@@ -1,9 +1,0 @@
-/* Bold the nested "Tier 1" / "Tier 2" section labels in the sidebar */
-.md-nav__item--nested > .md-nav__link {
-  font-weight: 700;
-}
-
-/* Slightly indent the leaf pattern pages so they read as children of the tier */
-.md-nav__item--nested .md-nav .md-nav__item:not(.md-nav__item--nested) > .md-nav__link {
-  padding-left: 1.2rem;
-}
